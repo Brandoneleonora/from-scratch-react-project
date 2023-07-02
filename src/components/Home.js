@@ -1,10 +1,12 @@
 import React from 'react'
 
-function Home(){
+
+function Home({ toyList }){
     return(
-        <div>
-            <h1>Hello</h1>
-        </div>
+        <section>
+            <h1>All Toys</h1>
+            <ul>{toyList}</ul>
+        </section>
     )
 }
 

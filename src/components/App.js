@@ -3,6 +3,7 @@ import { Route, Switch} from 'react-router-dom'
 import Home from "./Home";
 import NavBar from "./NavBar";
 import AddNewToy from "./Form"; 
+import ToyItems from './ToyItems';
 
 function App() {
   const [toys, setToys] = useState([])
@@ -14,6 +15,9 @@ function App() {
     .then(data => setToys(data))
   }, [])
 
+
+  let toyList = toys.map(toy => <ToyItems toy={toy} />)
+
   console.log(toys)
   return (
    <div>
@@ -23,7 +27,7 @@ function App() {
         <AddNewToy />
       </Route>
       <Route exact path = '/'>
-        <Home />
+        <Home toyList={toyList}/>
       </Route>
       
     </Switch>

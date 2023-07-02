@@ -15,3 +15,8 @@ code {
 .navButtons {
   padding-left: 5%;
 }
+
+.imgSize {
+  height: 300px;
+  width: 300px;
+}
