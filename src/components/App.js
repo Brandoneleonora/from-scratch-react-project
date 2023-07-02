@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Route, Switch} from 'react-router-dom'
 import Home from "./Home";
 import NavBar from "./NavBar";
+import AddNewToy from "./Form"; 
 
 function App() {
   const [toys, setToys] = useState([])
@@ -18,9 +19,13 @@ function App() {
    <div>
     <NavBar />
     <Switch>
+      <Route exact path = '/form'>
+        <AddNewToy />
+      </Route>
       <Route exact path = '/'>
         <Home />
       </Route>
+      
     </Switch>
 
    </div>
