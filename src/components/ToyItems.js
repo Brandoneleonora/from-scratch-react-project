@@ -7,11 +7,11 @@ function ToyItems({ toy }){
     console.log(id, image, likes, name)
 
     return(
-        <card key={id}>
+        <div className='toy' >
             <img src={image} alt='Image of Toy' className='imgSize'/>
             <p>{name}</p>
             <button>Delete Toy</button>
-        </card >
+        </div >
     )
 }
 
