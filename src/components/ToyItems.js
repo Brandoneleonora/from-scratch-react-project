@@ -5,7 +5,7 @@ function ToyItems({ toy, handleDeleteItem }){
     const { id, image, likes,name } = toy
 
     function handleDeleteClick(){
-        fetch(`http://localhost:4000/questions/${toy.id}`, {
+        fetch(`https://https-brandoneleonora-onrender-com.onrender.com/toys/${toy.id}`, {
           method: "DELETE",
         })
           .then((r) => r.json())

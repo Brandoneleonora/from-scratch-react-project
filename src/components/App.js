@@ -15,8 +15,12 @@ function App() {
     .then(data => setToys(data))
   }, [])
 
+  function onDeleteClicked(ty){
+    setToys(toys.filter(toy => toy.id !== ty.id))
+  }
 
-  let toyList = toys.map(toy => <ToyItems toy={toy} />)
+
+  let toyList = toys.map(toy => <ToyItems key={toy.id} toy={toy} handleDeleteItem={onDeleteClicked} />)
 
   function handleNewToy(toy){
     setToys([...toys, toy])
