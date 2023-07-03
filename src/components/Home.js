@@ -3,10 +3,10 @@ import React from 'react'
 
 function Home({ toyList }){
     return(
-        <section>
+        <div className='allToys'>
             <h1>All Toys</h1>
             <ul>{toyList}</ul>
-        </section>
+        </div>
     )
 }
 

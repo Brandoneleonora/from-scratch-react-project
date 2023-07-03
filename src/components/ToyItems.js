@@ -9,7 +9,11 @@ function ToyItems({ toy }){
     return(
         <div className='toy' >
             <img src={image} alt='Image of Toy' className='imgSize'/>
-            <p>{name}</p>
+            <div className='name'>
+                <h3>{name}</h3>
+                <span>Likes: {likes}❤️</span>
+            </div>
+            
             <button>Delete Toy</button>
         </div >
     )
