@@ -18,13 +18,16 @@ function App() {
 
   let toyList = toys.map(toy => <ToyItems toy={toy} />)
 
+  function handleNewToy(toy){
+    setToys([...toys, toy])
+  }
   console.log(toys)
   return (
    <div>
     <NavBar />
     <Switch>
       <Route exact path = '/form'>
-        <AddNewToy />
+        <AddNewToy onAddToy={handleNewToy} />
       </Route>
       <Route exact path = '/'>
         <Home toyList={toyList}/>

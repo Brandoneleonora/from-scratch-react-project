@@ -1,8 +1,16 @@
 import React from 'react'
 
 
-function ToyItems({ toy }){
+function ToyItems({ toy, handleDeleteItem }){
     const { id, image, likes,name } = toy
+
+    function handleDeleteClick(){
+        fetch(`http://localhost:4000/questions/${toy.id}`, {
+          method: "DELETE",
+        })
+          .then((r) => r.json())
+          .then(() => handleDeleteItem(toy))
+        }
 
     console.log(id, image, likes, name)
 
@@ -14,7 +22,7 @@ function ToyItems({ toy }){
                 <span>Likes: {likes}❤️</span>
             </div>
             
-            <button>Delete Toy</button>
+            <button onClick={handleDeleteClick}>Delete Toy</button>
         </div >
     )
 }
