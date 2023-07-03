@@ -33,7 +33,7 @@ npm start
 
 in order to get it running on a local host on your device.
 
-You will also need to get the [backend] 
+You will also need to get the [backend]
 (https://github.com/Brandoneleonora/json-server-template) repo running since that is a seperate from this frontend portion of the project. You should be all set after that!!
 
 ## License
