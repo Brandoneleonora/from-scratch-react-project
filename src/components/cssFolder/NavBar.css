@@ -1,0 +1,33 @@
+.nav_bar {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    background: lightblue;
+    height: 80px;
+    padding: 0 20px;
+}
+
+
+
+.navLogo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.navButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.button1, .button2, .button3 {
+    color:#fff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-right: 30px
+}

@@ -1,0 +1,11 @@
+.cartLayout h3 {
+    display: flex;
+    justify-content: center;
+    background: lightblue;
+    margin-left: auto;
+    width: 20%;
+    border-radius: 40px;
+    margin-right: 20px;
+    padding: 10px 0;
+
+}

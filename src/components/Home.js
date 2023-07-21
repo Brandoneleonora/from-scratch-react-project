@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './cssFolder/Home.css'
 
 
-function Home({ toyList }){
+function Home({ shoppingList }){
+    
     return(
         <div className='allToys'>
-            <h1>All Toys</h1>
-            <ul>{toyList}</ul>
+            <ul>{shoppingList}</ul>
         </div>
     )
 }

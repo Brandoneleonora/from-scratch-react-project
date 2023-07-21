@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 
 
-function AddNewToy({onAddToy}){
+function AddNewToy({onAddItem}){
     const [formData, setFormData] = useState({
         name: "",
         image: "",
-        likes: 0,
+        price: '',
       });
 
       function handleChange(event) {
@@ -17,7 +17,7 @@ function AddNewToy({onAddToy}){
 
       function handleSubmit(event){
         event.preventDefault()
-        fetch('https://https-brandoneleonora-onrender-com.onrender.com/toys', {
+        fetch('https://https-brandoneleonora-onrender-com.onrender.com/shoppingItems', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
@@ -25,16 +25,22 @@ function AddNewToy({onAddToy}){
       body:JSON.stringify({
         "name": formData.name,
         "image": formData.image ,
-        "likes": parseInt(formData.likes)
+        "price": parseInt(formData.price)
       }),
     })
     .then(r => r.json())
-    .then(newToy => onAddToy(newToy))
+    .then(newItem => onAddItem(newItem))
+
+        setFormData({
+          name: "",
+          image: "",
+          price: '',
+        })
       }
 
     return(
         <section>
-      <h1>NewToy</h1>
+      <h1>New Item</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -55,16 +61,17 @@ function AddNewToy({onAddToy}){
           />
         </label>
         <label>
-          Likes:
+          Price:
           <input
-            type='numbers'
-            name="likes"
-            value={formData.likes}
+            placeholder='0'
+            type="number"
+            name="price"
+            value={formData.price}
             onChange={handleChange}
           />
           
         </label>
-        <button type="submit">Add Toy</button>
+        <button type="submit">Add Item</button>
       </form>
     </section>
     )
